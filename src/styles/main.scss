@@ -1,5 +1,12 @@
-@use './variables';
+@use "./variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: variables.$font-stack;
+}
 
 :root {
-    background-color: variables.$primar-light-color;
+  background-color: variables.$primar-light-color;
 }

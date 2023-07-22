@@ -1,2 +1,54 @@
-@use '../variables';
+@use "../variables";
+@use "../mixins";
 
+.header {
+  margin: 0 10rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid variables.$grayish-blue;
+  @include mixins.center(row, space-between);
+
+  .header__left {
+    @include mixins.center(row, space-between);
+    .header__logo {
+      margin-right: 1.5rem;
+    }
+
+    ul {
+      @include mixins.center(row, space-between);
+      li {
+        list-style-type: none;
+        margin-right: 1.5rem;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+        border-bottom: 0px solid variables.$primary-color;
+        transition-duration: 0.1s;
+        padding-bottom: 3.6rem;
+        &:hover {
+          border-bottom: 0.25rem solid variables.$primary-color;
+        }
+      }
+    }
+  }
+  .header__right {
+    @include mixins.center(row, space-between);
+    gap: 2rem;
+    button {
+      background-color: transparent;
+      border: none;
+      outline: 0;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .usuario {
+      img {
+        width: 2.5rem;
+        border: 2px solid variables.$primary-color;
+        border-radius: 50%;
+      }
+    }
+  }
+}
