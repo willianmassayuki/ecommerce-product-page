@@ -1,0 +1,33 @@
+@use "../variables";
+
+#show-cart {
+  display: flex;
+}
+
+.cart-content {
+  position: absolute;
+  background-color: variables.$primar-light-color;
+  box-shadow: 0px 0px 10px variables.$lightbox-bg;
+  border-radius: 0.5rem;
+  top: 6rem;
+  right: 4rem;
+  width: 300px;
+  min-height: 200px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (max-width: variables.$mobile-size) {
+    width: 90vw;
+  }
+
+  h4 {
+    border-bottom: 1px solid variables.$grayish-blue;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  p {
+    color: variables.$text-p-color;
+    margin: auto 0;
+  }
+}

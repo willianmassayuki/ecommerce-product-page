@@ -1,1 +1,35 @@
 @use "./variables";
+@use "./mixins";
+
+.mobile {
+  display: none;
+  @media screen and (max-width: variables.$tablet-size) {
+    display: block;
+  }
+}
+
+.desktop {
+  @media screen and (max-width: variables.$tablet-size) {
+    display: none;
+  }
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.main-container {
+  @include mixins.center(row, space-between);
+  margin: 0 10rem;
+  padding: 5rem 0;
+
+  .image-container {
+    width: 40%;
+    min-width: 300px;
+  }
+
+  .info-container {
+    width: 40%;
+    min-width: 300px;
+  }
+}

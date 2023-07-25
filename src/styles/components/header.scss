@@ -6,27 +6,87 @@
   padding: 3rem 0;
   border-bottom: 1px solid variables.$grayish-blue;
   @include mixins.center(row, space-between);
+  @media screen and (max-width: variables.$tablet-size) {
+    margin: 0 3rem;
+    padding: 1.5rem 0;
+  }
+
+  @media screen and (max-width: variables.$mobile-size) {
+    margin: 0 2rem;
+    padding: 1rem 0;
+  }
 
   .header__left {
     @include mixins.center(row, space-between);
+    button {
+      @include mixins.resetButton();
+      margin-right: 1.5rem;
+    }
     .header__logo {
       margin-right: 1.5rem;
     }
 
-    ul {
-      @include mixins.center(row, space-between);
-      li {
-        list-style-type: none;
-        margin-right: 1.5rem;
+    @media screen and (max-width: variables.$tablet-size) {
+      .modal-overlay {
+        height: 100vh;
+        width: 100vw;
+        background-color: variables.$lightbox-bg;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
       }
-      a {
-        text-decoration: none;
-        color: inherit;
-        border-bottom: 0px solid variables.$primary-color;
-        transition-duration: 0.1s;
-        padding-bottom: 3.6rem;
-        &:hover {
-          border-bottom: 0.25rem solid variables.$primary-color;
+      #showModal {
+        display: block;
+        z-index: 999;
+      }
+
+      #showMenu {
+        @include mixins.center(column, start);
+        background-color: variables.$primar-light-color;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 150px;
+        button {
+          margin: 2rem auto 2rem 2rem;
+        }
+
+        ul {
+          @include mixins.center(column, start);
+          align-items: flex-start;
+          gap: 1rem;
+          a {
+            border-bottom: none;
+            padding-bottom: 0;
+            font-weight: 700;
+            &:hover {
+              border-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+    .menu-top {
+      @media screen and (max-width: variables.$tablet-size) {
+        position: absolute;
+        left: -1000px;
+      }
+      ul {
+        @include mixins.center(row, space-between);
+        li {
+          list-style-type: none;
+          margin-right: 1.5rem;
+        }
+        a {
+          text-decoration: none;
+          color: inherit;
+          border-bottom: 0px solid variables.$primary-color;
+          transition-duration: 0.1s;
+          padding-bottom: 3.6rem;
+          &:hover {
+            border-bottom: 0.25rem solid variables.$primary-color;
+          }
         }
       }
     }
@@ -35,18 +95,13 @@
     @include mixins.center(row, space-between);
     gap: 2rem;
     button {
-      background-color: transparent;
-      border: none;
-      outline: 0;
-      &:hover {
-        cursor: pointer;
-      }
+      @include mixins.resetButton();
     }
 
     .usuario {
       img {
         width: 2.5rem;
-        border: 2px solid variables.$primary-color;
+        border: 1px solid variables.$primary-color;
         border-radius: 50%;
       }
     }

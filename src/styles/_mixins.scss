@@ -6,3 +6,11 @@
   justify-content: ($justify);
   flex-direction: ($direcao);
 }
+@mixin resetButton {
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,12 +1,19 @@
 import "./styles/app.scss";
 import Header from "./components/Header";
-import Generico from "./components/Generico";
+import ProductImage from "./components/ProductImage";
 
 function App() {
   return (
     <>
       <Header />
-      <Generico />
+      <div className="main-container">
+        <div className="image-container">
+          <ProductImage />
+        </div>
+        <div className="info-container">
+          <p>Descrição e outras informações</p>
+        </div>
+      </div>
     </>
   );
 }
