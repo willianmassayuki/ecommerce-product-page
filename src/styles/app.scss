@@ -22,6 +22,10 @@
   @include mixins.center(row, space-between);
   margin: 0 10rem;
   padding: 5rem 0;
+  @media screen and (max-width: variables.$tablet-size) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
   .image-container {
     width: 40%;
@@ -31,5 +35,7 @@
   .info-container {
     width: 40%;
     min-width: 300px;
+    @include mixins.center(column, space-between);
+    align-items: start;
   }
 }

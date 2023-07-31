@@ -1,6 +1,7 @@
 import "./styles/app.scss";
 import Header from "./components/Header";
 import ProductImage from "./components/ProductImage";
+import ProductDescription from "./components/ProductDescription";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
           <ProductImage />
         </div>
         <div className="info-container">
-          <p>Descrição e outras informações</p>
+          <ProductDescription />
         </div>
       </div>
     </>

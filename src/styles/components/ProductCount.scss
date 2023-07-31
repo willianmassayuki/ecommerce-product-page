@@ -1,0 +1,38 @@
+@use "../variables";
+@use "../mixins";
+
+.vote-count {
+  color: variables.$text-color;
+  background-color: variables.$light-grayish-blue;
+  width: 120px;
+  height: 3rem;
+  border-radius: 12px;
+  padding: 0 0.5rem;
+  margin-right: 1rem;
+  @include mixins.center(row-reverse, space-between);
+
+  .negative {
+    color: variables.$text-color;
+  }
+
+  button {
+    display: flex;
+    border: none;
+    background-color: transparent;
+    outline: 0;
+    align-items: center;
+    height: 1.5rem;
+
+    &:hover svg path {
+      opacity: 75%;
+    }
+
+    svg path {
+      fill: variables.$primary-color;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

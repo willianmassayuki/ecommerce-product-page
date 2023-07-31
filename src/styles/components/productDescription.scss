@@ -1,0 +1,70 @@
+@use "../variables";
+@use "../mixins";
+
+.main-content {
+  margin-bottom: 1.5rem;
+  h4 {
+    color: variables.$primary-color;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    margin-bottom: 1rem;
+  }
+  p {
+    color: variables.$text-p-color;
+  }
+}
+
+.price-info {
+  margin-bottom: 1.5rem;
+  @media screen and (max-width: variables.$tablet-size) {
+    @include mixins.center(row, space-between);
+    width: 100%;
+  }
+  .price-main {
+    margin-bottom: 0.75rem;
+    h2,
+    h4 {
+      display: inline;
+      margin-right: 1rem;
+    }
+    h4 {
+      color: variables.$primary-color;
+      background-color: variables.$secondary-color;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  }
+  p {
+    color: variables.$grayish-blue;
+    font-weight: 700;
+    text-decoration-line: line-through;
+    @media screen and (max-width: variables.$tablet-size) {
+      display: inline;
+    }
+  }
+}
+
+.actions {
+  @include mixins.center(row, space-between);
+  width: 100%;
+  .add {
+    @include mixins.center(row, space-between);
+    background-color: variables.$primary-color;
+    color: variables.$primar-light-color;
+    border: none;
+    border-radius: 12px;
+    padding: 2px 4px;
+    height: 3rem;
+    width: 40%;
+    font-weight: 700;
+    font-size: 1rem;
+    span {
+      margin: 0 1rem;
+    }
+
+    svg path {
+      fill: variables.$primar-light-color;
+    }
+  }
+}
