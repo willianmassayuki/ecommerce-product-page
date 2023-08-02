@@ -54,13 +54,14 @@
     color: variables.$primar-light-color;
     border: none;
     border-radius: 12px;
-    padding: 2px 4px;
+    padding: 0 1rem;
     height: 3rem;
-    width: 40%;
+    width: 150px;
     font-weight: 700;
     font-size: 1rem;
+    cursor: pointer;
+
     span {
-      margin: 0 1rem;
     }
 
     svg path {

@@ -31,7 +31,11 @@ const VoteCount = ({ score }: VoteCountProps) => {
         {iconPlus}
       </button>
       <span className={`${votes < 0 && "negative"}`}>{votes}</span>
-      <button className="downVote" onClick={() => setVotes(votes - 1)}>
+      <button
+        className="downVote"
+        onClick={() => setVotes(votes - 1)}
+        disabled={votes === 0 ? true : false}
+      >
         {iconMinus}
       </button>
     </div>
