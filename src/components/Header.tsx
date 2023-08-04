@@ -1,9 +1,13 @@
 import "../styles/components/header.scss";
 import { useState } from "react";
 import Carrinho from "./Carrinho";
-type HeaderProps = {};
 
-const Header: React.FC<HeaderProps> = () => {
+type VoteCountProps = {
+  votes: number;
+  setVotes: any;
+};
+
+const Header = ({ votes, setVotes }: VoteCountProps) => {
   let [showMenu, setShowMenu] = useState<boolean>(false);
 
   function handleClickMenu() {
@@ -51,7 +55,7 @@ const Header: React.FC<HeaderProps> = () => {
         </div>
       </div>
       <div className="header__right">
-        <Carrinho />
+        <Carrinho votes={votes} setVotes={setVotes} />
         <a className="usuario" href="#">
           <img src="/images/image-avatar.png" alt="Profile picture" />
         </a>

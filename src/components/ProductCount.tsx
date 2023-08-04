@@ -19,12 +19,11 @@ const iconMinus: JSX.Element = (
 );
 
 type VoteCountProps = {
-  score: number;
+  votes: number;
+  setVotes: any;
 };
 
-const VoteCount = ({ score }: VoteCountProps) => {
-  // Count vote
-  const [votes, setVotes] = useState<number>(score);
+const VoteCount = ({ votes, setVotes }: VoteCountProps) => {
   return (
     <div className="vote-count">
       <button className="upVote" onClick={() => setVotes(votes + 1)}>

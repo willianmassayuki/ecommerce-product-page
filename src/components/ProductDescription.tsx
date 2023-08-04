@@ -11,7 +11,12 @@ const cartIcon: JSX.Element = (
   </svg>
 );
 
-const ProductDescription = () => {
+type VoteCountProps = {
+  votes: number;
+  setVotes: any;
+};
+
+const ProductDescription = ({ votes, setVotes }: VoteCountProps) => {
   return (
     <>
       <div className="main-content">
@@ -31,7 +36,7 @@ const ProductDescription = () => {
         <p>$250.00</p>
       </div>
       <div className="actions">
-        <ProductCounter score={1} />
+        <ProductCounter votes={votes} setVotes={setVotes} />
         <button className="add">
           {cartIcon}
           <span>Add to cart</span>
