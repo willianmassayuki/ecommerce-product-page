@@ -56,11 +56,21 @@
         width: 1rem;
         height: 1rem;
       }
-      .checkout-button {
-        button {
-          background-color: variables.$primary-color;
-        }
-      }
+    }
+  }
+  .checkout-button {
+    @include mixins.center(row, center);
+    background-color: variables.$primary-color;
+    border: none;
+    border-radius: 12px;
+    padding: 0 1rem;
+    height: 3rem;
+    width: 90%;
+    cursor: pointer;
+    button {
+      color: variables.$primar-light-color;
+      font-weight: 700;
+      font-size: 1rem;
     }
   }
 }

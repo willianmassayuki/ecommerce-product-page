@@ -8,9 +8,14 @@ function App() {
   // Count vote
   const [votes, setVotes] = useState<number>(0);
 
+  function mostraDados() {
+    console.log(dados.product.description);
+  }
+
   return (
     <>
       <Header votes={votes} setVotes={setVotes} />
+      <button onClick={mostraDados}>mostra dados</button>
       <div className="main-container">
         <div className="image-container">
           <ProductImage />
