@@ -1,10 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './styles/main.scss'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import "./styles/main.scss";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+//Context
+import { DataProvider } from "./context/DataContext.tsx";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    {/* context envolvendo o elementos que farão uso dos dados*/}
+    <DataProvider>
+      <App />
+    </DataProvider>
+  </React.StrictMode>
+);

@@ -1,21 +1,23 @@
 import "../styles/components/productImage.scss";
 import { useState } from "react";
 
+// Context
+import { useContext } from "react";
+import { DataContext } from "../context/DataContext";
+
 const ProductImage = () => {
+  //Extraindo dados do context
+  const { dados } = useContext(DataContext);
+
   const [currentImg, setCurrentImg] = useState<string>(
-    "/images/image-product-1.jpg"
+    dados.product.images.img[0]
   );
-  const productThumbs: string[] = [
-    "/images/image-product-1-thumbnail.jpg",
-    "/images/image-product-2-thumbnail.jpg",
-    "/images/image-product-3-thumbnail.jpg",
-    "/images/image-product-4-thumbnail.jpg",
-  ];
+  const productThumbs: string[] = dados.product.images.thumbnail;
 
   const [activeThumb, setActiveThumb] = useState<string>(productThumbs[0]);
 
   function changeImg(thumbImg: string) {
-    const newImg = thumbImg.replace("-thumbnail", "");
+    //const newImg = thumbImg.replace("-thumbnail", "");
     setCurrentImg(newImg);
     setActiveThumb(thumbImg);
   }

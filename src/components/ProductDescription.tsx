@@ -1,6 +1,10 @@
 import "../styles/components/productDescription.scss";
 import ProductCounter from "../components/ProductCount.tsx";
 
+// Context
+import { useContext } from "react";
+import { DataContext } from "../context/DataContext";
+
 const cartIcon: JSX.Element = (
   <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
     <path
@@ -17,23 +21,21 @@ type VoteCountProps = {
 };
 
 const ProductDescription = ({ votes, setVotes }: VoteCountProps) => {
+  //Extraindo dados do context
+  const { dados } = useContext(DataContext);
   return (
     <>
       <div className="main-content">
-        <h4>SNEAKER COMPANY</h4>
-        <h1>Fall Limited Edition Sneakers</h1>
-        <p>
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they’ll withstand everything
-          the weather can offer.
-        </p>
+        <h4>{dados.product.title}</h4>
+        <h1>{dados.product.subtitle}</h1>
+        <p>{dados.product.description}</p>
       </div>
       <div className="price-info">
         <div className="price-main">
-          <h2>$125.00</h2>
-          <h4>50%</h4>
+          <h2>${dados.product.price * dados.product.discount}</h2>
+          <h4>{dados.product.discount * 100}%</h4>
         </div>
-        <p>$250.00</p>
+        <p>${dados.product.price}</p>
       </div>
       <div className="actions">
         <ProductCounter votes={votes} setVotes={setVotes} />

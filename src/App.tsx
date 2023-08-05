@@ -2,9 +2,15 @@ import "./styles/app.scss";
 import Header from "./components/Header";
 import ProductImage from "./components/ProductImage";
 import ProductDescription from "./components/ProductDescription";
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+// Context
+import { DataContext } from "./context/DataContext";
 
 function App() {
+  //Extraindo dados do context
+  const { dados } = useContext(DataContext);
+
   // Count vote
   const [votes, setVotes] = useState<number>(0);
 
