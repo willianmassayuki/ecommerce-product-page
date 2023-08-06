@@ -33,7 +33,7 @@ const VoteCount = ({ votes, setVotes }: VoteCountProps) => {
       <button
         className="downVote"
         onClick={() => setVotes(votes - 1)}
-        disabled={votes === 0 ? true : false}
+        disabled={votes <= 1 ? true : false}
       >
         {iconMinus}
       </button>

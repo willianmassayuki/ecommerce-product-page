@@ -55,7 +55,7 @@ const Header = ({ votes, setVotes }: VoteCountProps) => {
         </div>
       </div>
       <div className="header__right">
-        <Carrinho votes={votes} setVotes={setVotes} />
+        <Carrinho />
         <a className="usuario" href="#">
           <img src="/images/image-avatar.png" alt="Profile picture" />
         </a>

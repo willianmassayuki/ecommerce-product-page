@@ -2,7 +2,7 @@ import "../styles/components/productDescription.scss";
 import ProductCounter from "../components/ProductCount.tsx";
 
 // Context
-import { useContext } from "react";
+import { SetStateAction, useContext } from "react";
 import { DataContext } from "../context/DataContext";
 
 const cartIcon: JSX.Element = (
@@ -18,11 +18,28 @@ const cartIcon: JSX.Element = (
 type VoteCountProps = {
   votes: number;
   setVotes: any;
+  orders: object;
+  setOrders: any;
 };
 
-const ProductDescription = ({ votes, setVotes }: VoteCountProps) => {
+const ProductDescription = ({
+  votes,
+  setVotes,
+  orders,
+  setOrders,
+}: VoteCountProps) => {
   //Extraindo dados do context
   const { dados } = useContext(DataContext);
+
+  function addProduct(id: number, qtd: number) {
+    setOrders(() => [
+      {
+        id: id,
+        qtd: qtd,
+      },
+    ]);
+    console.log(orders);
+  }
   return (
     <>
       <div className="main-content">
@@ -39,7 +56,10 @@ const ProductDescription = ({ votes, setVotes }: VoteCountProps) => {
       </div>
       <div className="actions">
         <ProductCounter votes={votes} setVotes={setVotes} />
-        <button className="add">
+        <button
+          className="add"
+          onClick={() => addProduct(dados.product.id, votes)}
+        >
           {cartIcon}
           <span>Add to cart</span>
         </button>

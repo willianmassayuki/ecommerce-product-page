@@ -14,8 +14,11 @@ function App() {
   // Count vote
   const [votes, setVotes] = useState<number>(0);
 
+  // Pedido
+  const [orders, setOrders] = useState({ id: null, qtd: null });
+
   function mostraDados() {
-    console.log(dados.product.description);
+    console.log(orders);
   }
 
   return (
@@ -27,7 +30,12 @@ function App() {
           <ProductImage />
         </div>
         <div className="info-container">
-          <ProductDescription votes={votes} setVotes={setVotes} />
+          <ProductDescription
+            votes={votes}
+            setVotes={setVotes}
+            orders={orders}
+            setOrders={setOrders}
+          />
         </div>
       </div>
     </>

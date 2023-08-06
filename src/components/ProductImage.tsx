@@ -16,10 +16,10 @@ const ProductImage = () => {
 
   const [activeThumb, setActiveThumb] = useState<string>(productThumbs[0]);
 
-  function changeImg(thumbImg: string) {
+  function changeImg(index: number) {
     //const newImg = thumbImg.replace("-thumbnail", "");
-    setCurrentImg(newImg);
-    setActiveThumb(thumbImg);
+    setCurrentImg(dados.product.images.img[index]);
+    setActiveThumb(dados.product.images.thumbnail[index]);
   }
 
   return (
@@ -29,11 +29,7 @@ const ProductImage = () => {
       </div>
       <div className="images-thumbs">
         {productThumbs.map((thumb, index) => (
-          <div
-            className="thumb"
-            key={thumb}
-            onClick={changeImg.bind(null, thumb)}
-          >
+          <div className="thumb" key={thumb} onClick={() => changeImg(index)}>
             <img
               className={`${thumb === activeThumb && "active"}`}
               src={thumb}
