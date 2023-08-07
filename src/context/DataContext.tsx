@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 type dadoProps = {
   product: {
@@ -43,7 +43,20 @@ export const DataProvider = ({ children }) => {
       },
     },
   };
+
+  const teste = "Uma const de teste";
+
+  // Count vote
+  const [votes, setVotes] = useState<number>(1);
+
+  // Pedido
+  const [orders, setOrders] = useState({ id: null, qtd: null });
+
   return (
-    <DataContext.Provider value={{ dados }}>{children}</DataContext.Provider>
+    <DataContext.Provider
+      value={{ dados, teste, votes, setVotes, orders, setOrders }}
+    >
+      {children}
+    </DataContext.Provider>
   );
 };

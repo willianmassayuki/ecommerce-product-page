@@ -9,13 +9,8 @@ import { DataContext } from "./context/DataContext";
 
 function App() {
   //Extraindo dados do context
-  const { dados } = useContext(DataContext);
-
-  // Count vote
-  const [votes, setVotes] = useState<number>(0);
-
-  // Pedido
-  const [orders, setOrders] = useState({ id: null, qtd: null });
+  const { dados, teste, votes, setVotes, orders, setOrders } =
+    useContext(DataContext);
 
   function mostraDados() {
     console.log(orders);

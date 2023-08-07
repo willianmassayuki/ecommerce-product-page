@@ -1,7 +1,21 @@
 import "../styles/components/carrinho.scss";
-import { useState } from "react";
+import { useState, useContext } from "react";
+// Context
+import { DataContext } from "../context/DataContext";
 
 const Carrinho = () => {
+  //Extraindo dados do context
+  const { dados, teste, votes, setVotes, orders, setOrders } =
+    useContext(DataContext);
+
+  function handleOrder() {
+    console.log(orders);
+  }
+
+  function deleteItem() {
+    console.log("Uma função para deletar o item em questão");
+  }
+
   let [showCart, setShowCart] = useState<Boolean>(false);
   const [cartItem, setCartItem] = useState<Boolean>(true);
 
@@ -31,13 +45,13 @@ const Carrinho = () => {
                       $125.00 x 3 <b>$375.00</b>
                     </span>
                   </div>
-                  <button className="delete">
+                  <button className="delete" onClick={() => deleteItem()}>
                     <img src="/images/icon-delete.svg" alt="Delete item" />
                   </button>
                 </div>
               </div>
               <div className="checkout-button">
-                <button>Checkout</button>
+                <button onClick={() => handleOrder()}>Checkout</button>
               </div>
             </>
           ) : (
