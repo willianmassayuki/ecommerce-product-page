@@ -9,7 +9,7 @@ const Carrinho = () => {
     useContext(DataContext);
 
   function handleOrder() {
-    console.log(orders);
+    console.log(orders[0].id);
   }
 
   function deleteItem() {

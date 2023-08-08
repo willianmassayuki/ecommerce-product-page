@@ -32,13 +32,7 @@ const ProductDescription = ({
   const { dados } = useContext(DataContext);
 
   function addProduct(id: number, qtd: number) {
-    setOrders(() => [
-      {
-        id: id,
-        qtd: qtd,
-      },
-    ]);
-    console.log(orders);
+    setOrders((prevOrders) => [...prevOrders, { id: id, qtd: qtd }]);
   }
   return (
     <>
