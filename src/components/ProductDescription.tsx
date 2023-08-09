@@ -15,11 +15,16 @@ const cartIcon: JSX.Element = (
   </svg>
 );
 
+type Order = {
+  id: number;
+  qtd: number;
+};
+
 type VoteCountProps = {
   votes: number;
-  setVotes: any;
-  orders: object;
-  setOrders: any;
+  setVotes: React.Dispatch<React.SetStateAction<number>>;
+  orders: Order[];
+  setOrders: React.Dispatch<React.SetStateAction<Order[]>>;
 };
 
 const ProductDescription = ({
@@ -31,8 +36,9 @@ const ProductDescription = ({
   //Extraindo dados do context
   const { dados } = useContext(DataContext);
 
-  function addProduct(id: number, qtd: number) {
-    setOrders((prevOrders) => [...prevOrders, { id: id, qtd: qtd }]);
+  function addProduct(id, qtd) {
+    // console.log(id, qtd);
+    setOrders((prev) => [...prev, { id: id, qtd: qtd }]);
   }
   return (
     <>

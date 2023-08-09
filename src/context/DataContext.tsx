@@ -50,7 +50,11 @@ export const DataProvider = ({ children }) => {
   const [votes, setVotes] = useState<number>(1);
 
   // Pedido
-  const [orders, setOrders] = useState({ id: null, qtd: null });
+  // type Order = {
+  //   id: number;
+  //   qtd: number;
+  // };
+  const [orders, setOrders] = useState();
 
   return (
     <DataContext.Provider
