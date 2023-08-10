@@ -54,7 +54,7 @@ export const DataProvider = ({ children }) => {
   //   id: number;
   //   qtd: number;
   // };
-  const [orders, setOrders] = useState();
+  const [orders, setOrders] = useState([]);
 
   return (
     <DataContext.Provider
