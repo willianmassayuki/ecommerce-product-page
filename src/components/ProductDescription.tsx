@@ -37,8 +37,19 @@ const ProductDescription = ({
   const { dados } = useContext(DataContext);
 
   function addProduct(id, qtd) {
-    // console.log(id, qtd);
-    setOrders((prev) => [...prev, { id: id, qtd: qtd }]);
+    // Verifica se já existe um pedido com o mesmo id
+    const existingOrder = orders.find((order) => order.id === id);
+
+    if (existingOrder) {
+      // Se o pedido com o mesmo id já existe, atualize a quantidade
+      setOrders((prev) =>
+        prev.map((order) =>
+          order.id === id ? { ...order, qtd: order.qtd + qtd } : order
+        )
+      );
+    } else {
+      setOrders((prev) => [...prev, { id: id, qtd: qtd }]);
+    }
   }
   return (
     <>
