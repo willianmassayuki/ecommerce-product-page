@@ -54,22 +54,26 @@ const ProductDescription = ({
   return (
     <>
       <div className="main-content">
-        <h4>{dados.product.title}</h4>
-        <h1>{dados.product.subtitle}</h1>
-        <p>{dados.product.description}</p>
+        <h4>{dados.products[0].title}</h4>
+        <h1>{dados.products[0].subtitle}</h1>
+        <p>{dados.products[0].description}</p>
       </div>
       <div className="price-info">
         <div className="price-main">
-          <h2>${dados.product.price * dados.product.discount}</h2>
-          <h4>{dados.product.discount * 100}%</h4>
+          <h2>
+            $
+            {dados.products[0].price -
+              dados.products[0].price * dados.products[0].discount}
+          </h2>
+          <h4>{dados.products[0].discount * 100}%</h4>
         </div>
-        <p>${dados.product.price}</p>
+        <p>${dados.products[0].price}</p>
       </div>
       <div className="actions">
         <ProductCounter votes={votes} setVotes={setVotes} />
         <button
           className="add"
-          onClick={() => addProduct(dados.product.id, votes)}
+          onClick={() => addProduct(dados.products[0].id, votes)}
         >
           {cartIcon}
           <span>Add to cart</span>

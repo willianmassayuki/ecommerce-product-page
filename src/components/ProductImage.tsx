@@ -10,16 +10,16 @@ const ProductImage = () => {
   const { dados } = useContext(DataContext);
 
   const [currentImg, setCurrentImg] = useState<string>(
-    dados.product.images.img[0]
+    dados.products[0].images.img[0]
   );
-  const productThumbs: string[] = dados.product.images.thumbnail;
+  const productThumbs: string[] = dados.products[0].images.thumbnail;
 
   const [activeThumb, setActiveThumb] = useState<string>(productThumbs[0]);
 
   function changeImg(index: number) {
     //const newImg = thumbImg.replace("-thumbnail", "");
-    setCurrentImg(dados.product.images.img[index]);
-    setActiveThumb(dados.product.images.thumbnail[index]);
+    setCurrentImg(dados.products[0].images.img[index]);
+    setActiveThumb(dados.products[0].images.thumbnail[index]);
   }
 
   return (
