@@ -9,7 +9,8 @@ const Carrinho = () => {
     useContext(DataContext);
 
   function handleOrder() {
-    console.log(orders[0].id);
+    console.log(orders);
+    console.log(dados);
   }
 
   function deleteItem() {
@@ -34,21 +35,28 @@ const Carrinho = () => {
           cartItem ? (
             <>
               <div className="cart-items-container">
-                <div className="cart-item">
-                  <img
-                    src="/images/image-product-1-thumbnail.jpg"
-                    alt="Product 1"
-                  />
-                  <div className="item-text">
-                    <p>Fall Limited Edition Sneakers</p>
-                    <span>
-                      $125.00 x 3 <b>$375.00</b>
-                    </span>
-                  </div>
-                  <button className="delete" onClick={() => deleteItem()}>
-                    <img src="/images/icon-delete.svg" alt="Delete item" />
-                  </button>
-                </div>
+                {orders.map(
+                  (order) => (
+                    //dados.map((item) => (
+                    <p>{order.id}</p>
+                  )
+                  // <div className="cart-item">
+                  //   <img
+                  //     src="/images/image-product-1-thumbnail.jpg"
+                  //     alt="Product 1"
+                  //   />
+                  //   <div className="item-text">
+                  //     <p>Fall Limited Edition Sneakers</p>
+                  //     <span>
+                  //       $125.00 x 3 <b>$375.00</b>
+                  //     </span>
+                  //   </div>
+                  //   <button className="delete" onClick={() => deleteItem()}>
+                  //     <img src="/images/icon-delete.svg" alt="Delete item" />
+                  //   </button>
+                  // </div>
+                  //))
+                )}
               </div>
               <div className="checkout-button">
                 <button onClick={() => handleOrder()}>Checkout</button>
