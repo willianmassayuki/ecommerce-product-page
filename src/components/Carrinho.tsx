@@ -10,11 +10,10 @@ const Carrinho = () => {
 
   function handleOrder() {
     console.log(orders);
-    console.log(dados);
   }
 
   function deleteItem() {
-    console.log("Uma função para deletar o item em questão");
+    setOrders([]);
   }
 
   let [showCart, setShowCart] = useState<Boolean>(false);
@@ -32,34 +31,42 @@ const Carrinho = () => {
         <h4>Cart</h4>
         {
           // possivelmente um map para listar todos os produtos
-          cartItem ? (
+          orders.length > 0 ? (
             <>
               <div className="cart-items-container">
-                {orders.map(
-                  (order) => (
-                    //dados.map((item) => (
-                    <p>{order.id}</p>
+                {orders.map((order) =>
+                  dados.products.map((item) =>
+                    order.id == item.id ? (
+                      <div className="cart-item" key={item.id}>
+                        <img
+                          src={`${item.images.thumbnail[0]}`}
+                          alt={`${item.subtitle}`}
+                        />
+                        <div className="item-text">
+                          <p>{`${item.subtitle}`}</p>
+                          <span>
+                            {`$${item.price - item.price * item.discount}.00x${
+                              order.qtd
+                            }`}
+                            <b>{`$${
+                              (item.price - item.price * item.discount) *
+                              order.qtd
+                            }.00`}</b>
+                          </span>
+                        </div>
+                        <button className="delete" onClick={() => deleteItem()}>
+                          <img
+                            src="/images/icon-delete.svg"
+                            alt="Delete item"
+                          />
+                        </button>
+                      </div>
+                    ) : null
                   )
-                  // <div className="cart-item">
-                  //   <img
-                  //     src="/images/image-product-1-thumbnail.jpg"
-                  //     alt="Product 1"
-                  //   />
-                  //   <div className="item-text">
-                  //     <p>Fall Limited Edition Sneakers</p>
-                  //     <span>
-                  //       $125.00 x 3 <b>$375.00</b>
-                  //     </span>
-                  //   </div>
-                  //   <button className="delete" onClick={() => deleteItem()}>
-                  //     <img src="/images/icon-delete.svg" alt="Delete item" />
-                  //   </button>
-                  // </div>
-                  //))
                 )}
               </div>
-              <div className="checkout-button">
-                <button onClick={() => handleOrder()}>Checkout</button>
+              <div className="checkout-button" onClick={() => handleOrder()}>
+                <button>Checkout</button>
               </div>
             </>
           ) : (
