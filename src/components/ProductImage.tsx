@@ -22,10 +22,14 @@ const ProductImage = () => {
     setActiveThumb(dados.products[0].images.thumbnail[index]);
   }
 
+  function OpenImage() {
+    console.log("Abrir um modal com a imagem");
+  }
+
   return (
     <div className="images-container">
       <div className="images-main">
-        <img src={`${currentImg}`} alt="Product" />
+        <img src={`${currentImg}`} alt="Product" onClick={() => OpenImage()} />
       </div>
       <div className="images-thumbs">
         {productThumbs.map((thumb, index) => (
