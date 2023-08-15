@@ -16,6 +16,8 @@ const ProductImage = () => {
 
   const [activeThumb, setActiveThumb] = useState<string>(productThumbs[0]);
 
+  let [imgModal, setImgModal] = useState(false);
+
   function changeImg(index: number) {
     //const newImg = thumbImg.replace("-thumbnail", "");
     setCurrentImg(dados.products[0].images.img[index]);
@@ -24,25 +26,60 @@ const ProductImage = () => {
 
   function OpenImage() {
     console.log("Abrir um modal com a imagem");
+    setImgModal(!imgModal);
   }
 
   return (
-    <div className="images-container">
-      <div className="images-main">
-        <img src={`${currentImg}`} alt="Product" onClick={() => OpenImage()} />
+    <>
+      <div className="images-container">
+        <div className="images-main">
+          <img
+            src={`${currentImg}`}
+            alt="Product"
+            onClick={() => OpenImage()}
+          />
+        </div>
+        <div className="images-thumbs">
+          {productThumbs.map((thumb, index) => (
+            <div className="thumb" key={thumb} onClick={() => changeImg(index)}>
+              <img
+                className={`${thumb === activeThumb && "active"}`}
+                src={thumb}
+                alt="Thumb"
+              />
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="images-thumbs">
-        {productThumbs.map((thumb, index) => (
-          <div className="thumb" key={thumb} onClick={() => changeImg(index)}>
-            <img
-              className={`${thumb === activeThumb && "active"}`}
-              src={thumb}
-              alt="Thumb"
-            />
+      {imgModal ? (
+        <div className="img-modal">
+          <div className="images-container-modal">
+            <div className="images-main-modal">
+              <img
+                src={`${currentImg}`}
+                alt="Product"
+                onClick={() => OpenImage()}
+              />
+            </div>
+            <div className="images-thumbs-modal">
+              {productThumbs.map((thumb, index) => (
+                <div
+                  className="thumb"
+                  key={thumb}
+                  onClick={() => changeImg(index)}
+                >
+                  <img
+                    className={`${thumb === activeThumb && "active"}`}
+                    src={thumb}
+                    alt="Thumb"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+      ) : null}
+    </>
   );
 };
 
