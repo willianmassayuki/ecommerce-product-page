@@ -32,3 +32,20 @@
     }
   }
 }
+
+.img-modal {
+  background-color: rgba(0, 0, 0, 0.475);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  .images-container-modal {
+    .images-main-modal {
+    }
+
+    .images-thumbs-modal {
+    }
+  }
+}
