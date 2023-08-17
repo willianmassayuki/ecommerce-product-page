@@ -40,12 +40,32 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+}
+.images-container-modal {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 
-  .images-container-modal {
-    .images-main-modal {
+  position: fixed;
+  top: 0;
+  .images-main-modal {
+    img {
+      max-width: 500px;
     }
+  }
 
-    .images-thumbs-modal {
+  .images-thumbs-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    .thumb {
+      width: 50px;
+      img {
+        width: 100%;
+      }
     }
   }
 }

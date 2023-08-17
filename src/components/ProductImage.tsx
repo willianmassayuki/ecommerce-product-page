@@ -52,14 +52,11 @@ const ProductImage = () => {
         </div>
       </div>
       {imgModal ? (
-        <div className="img-modal">
+        <>
+          <div className="img-modal" onClick={() => OpenImage()}></div>
           <div className="images-container-modal">
             <div className="images-main-modal">
-              <img
-                src={`${currentImg}`}
-                alt="Product"
-                onClick={() => OpenImage()}
-              />
+              <img src={`${currentImg}`} alt="Product" />
             </div>
             <div className="images-thumbs-modal">
               {productThumbs.map((thumb, index) => (
@@ -77,7 +74,7 @@ const ProductImage = () => {
               ))}
             </div>
           </div>
-        </div>
+        </>
       ) : null}
     </>
   );
