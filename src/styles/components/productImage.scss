@@ -59,6 +59,14 @@
     }
   }
 
+  .open-close-img-modal {
+    outline: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 40px;
+    right: 70px;
+  }
+
   .images-thumbs-modal {
     display: flex;
     flex-direction: column;
@@ -67,6 +75,38 @@
       width: 50px;
       img {
         width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .images-container-modal {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .images-main-modal {
+      img {
+        width: 100vw;
+      }
+    }
+
+    .images-thumbs-modal {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      .thumb {
+        width: 50px;
+        img {
+          width: 100%;
+        }
       }
     }
   }

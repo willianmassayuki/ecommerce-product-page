@@ -12,14 +12,14 @@ function App() {
   const { dados, teste, votes, setVotes, orders, setOrders } =
     useContext(DataContext);
 
-  function mostraDados() {
-    console.log(orders);
-  }
+  // function mostraDados() {
+  //   console.log(orders);
+  // }
 
   return (
     <>
       <Header votes={votes} setVotes={setVotes} />
-      <button onClick={mostraDados}>mostra dados</button>
+      {/* <button onClick={mostraDados}>mostra dados</button> */}
       <div className="main-container">
         <div className="image-container">
           <ProductImage />
