@@ -57,14 +57,14 @@
     img {
       max-width: 500px;
     }
-  }
 
-  .open-close-img-modal {
-    outline: 0;
-    background-color: transparent;
-    position: absolute;
-    top: 40px;
-    right: 70px;
+    .open-close-img-modal {
+      outline: 0;
+      background-color: transparent;
+      position: absolute;
+      top: 40px;
+      right: 70px;
+    }
   }
 
   .images-thumbs-modal {
@@ -95,6 +95,14 @@
     .images-main-modal {
       img {
         width: 100vw;
+      }
+
+      .open-close-img-modal {
+        outline: 0;
+        background-color: transparent;
+        position: absolute;
+        top: 70px;
+        right: 10px;
       }
     }
 
