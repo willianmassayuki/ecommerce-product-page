@@ -32,7 +32,7 @@
     }
   }
 }
-
+// Um teste
 .img-modal {
   background-color: rgba(0, 0, 0, 0.475);
   position: fixed;
@@ -40,6 +40,15 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+
+  .open-close-img-modal {
+    outline: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border-radius: 50%;
+  }
 }
 .images-container-modal {
   display: flex;
@@ -57,15 +66,6 @@
     img {
       max-width: 500px;
     }
-
-    .open-close-img-modal {
-      outline: 0;
-      background-color: transparent;
-      position: absolute;
-      top: 40px;
-      right: 70px;
-      border-radius: 50%;
-    }
   }
 
   .images-thumbs-modal {
@@ -82,6 +82,16 @@
 }
 
 @media screen and (max-width: 768px) {
+  .img-modal {
+    .open-close-img-modal {
+      outline: 0;
+      background-color: transparent;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+  }
+
   .images-container-modal {
     flex-direction: column;
     gap: 1rem;
@@ -96,14 +106,6 @@
     .images-main-modal {
       img {
         width: 100vw;
-      }
-
-      .open-close-img-modal {
-        outline: 0;
-        background-color: transparent;
-        position: absolute;
-        top: 10px;
-        right: 10px;
       }
     }
 
