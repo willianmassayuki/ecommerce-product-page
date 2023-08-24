@@ -53,17 +53,18 @@ const ProductImage = () => {
       </div>
       {imgModal ? (
         <>
-          <div className="img-modal" onClick={() => OpenImage()}></div>
-          <div className="images-container-modal">
-            <div className="images-main-modal">
-              <img src={`${currentImg}`} alt="Product" />
-            </div>
+          <div className="img-modal" onClick={() => OpenImage()}>
             <button
               className="open-close-img-modal"
               onClick={() => OpenImage()}
             >
               X
             </button>
+          </div>
+          <div className="images-container-modal">
+            <div className="images-main-modal">
+              <img src={`${currentImg}`} alt="Product" />
+            </div>
             <div className="images-thumbs-modal">
               {productThumbs.map((thumb, index) => (
                 <div
