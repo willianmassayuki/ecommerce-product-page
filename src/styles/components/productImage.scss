@@ -42,12 +42,18 @@
   height: 100vh;
 
   .open-close-img-modal {
+    font-size: 24px;
+    color: white;
     outline: 0;
-    background-color: transparent;
+    border: none;
+    background-color: hsl(26, 100%, 55%);
     position: absolute;
     top: 15px;
-    right: 15px;
-    border-radius: 50%;
+    right: 30px;
+    border-radius: 16px;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
   }
 }
 .images-container-modal {
@@ -80,13 +86,10 @@
     }
   }
 }
-
+// Mobile
 @media screen and (max-width: 768px) {
   .img-modal {
     .open-close-img-modal {
-      outline: 0;
-      background-color: transparent;
-      position: absolute;
       top: 15px;
       right: 15px;
     }
