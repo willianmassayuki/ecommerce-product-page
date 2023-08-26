@@ -52,15 +52,11 @@ const ProductImage = () => {
         </div>
       </div>
       {imgModal ? (
-        <>
-          <div className="img-modal" onClick={() => OpenImage()}>
-            <button
-              className="open-close-img-modal"
-              onClick={() => OpenImage()}
-            >
-              X
-            </button>
-          </div>
+        <div className="img-modal-wrapper">
+          <div className="img-modal" onClick={() => OpenImage()}></div>
+          <button className="open-close-img-modal" onClick={() => OpenImage()}>
+            X
+          </button>
           <div className="images-container-modal">
             <div className="images-main-modal">
               <img src={`${currentImg}`} alt="Product" />
@@ -81,7 +77,7 @@ const ProductImage = () => {
               ))}
             </div>
           </div>
-        </>
+        </div>
       ) : null}
     </>
   );
