@@ -1,6 +1,9 @@
 @use "../variables";
 @use "../mixins";
-
+.active {
+  opacity: 75%;
+  border: 2px solid variables.$primary-color;
+}
 .images-container {
   .images-main {
     margin-bottom: 1rem;
@@ -13,11 +16,6 @@
   .images-thumbs {
     @include mixins.center(row, space-between);
     gap: 2rem;
-
-    .active {
-      opacity: 75%;
-      border: 2px solid variables.$primary-color;
-    }
 
     .thumb {
       &:hover {

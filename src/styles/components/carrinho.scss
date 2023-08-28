@@ -17,8 +17,11 @@
   display: none;
   flex-direction: column;
   align-items: center;
+
   @media screen and (max-width: variables.$mobile-size) {
-    width: 80vw;
+    width: auto;
+    right: 5%;
+    left: 5%;
   }
 
   h4 {
