@@ -1,9 +1,11 @@
 @use "../variables";
 @use "../mixins";
+
 .active {
   opacity: 75%;
   border: 2px solid variables.$primary-color;
 }
+
 .images-container {
   .images-main {
     margin-bottom: 1rem;
@@ -71,6 +73,7 @@
     .images-main-modal {
       img {
         max-width: 500px;
+        border-radius: 1rem;
       }
     }
 
@@ -82,6 +85,7 @@
         width: 50px;
         img {
           width: 100%;
+          border-radius: 1rem;
         }
       }
     }
