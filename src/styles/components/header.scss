@@ -47,10 +47,11 @@
         left: 0;
         top: 0;
         height: 100vh;
-        width: 150px;
-        po button {
-          margin: 2rem auto 2rem 2rem;
-        }
+        min-width: 200px;
+        width: 30%;
+        // button {
+        //   margin: 2rem auto 2rem 2rem;
+        // }
 
         ul {
           @include mixins.center(column, start);
